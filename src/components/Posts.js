@@ -1,4 +1,5 @@
 import React,{ useState, useEffect } from 'react'
+import  Card  from 'react-native-ui-lib'
 import {
     View,
     Text,
@@ -8,14 +9,13 @@ import {
 const Posts = () => {
     const [posts, setPosts] = useState([])
 
-   
-
     useEffect(() => {
         const getPosts = async () => {
             try{
                 const fetchPosts = await fetch('http://iyceblog.herokuapp.com/api/posts')
                 const data = await fetchPosts.json()
                 alert(data.results[0].title)
+                console.log(data.results)
                 setPosts(data.results)
             }catch(e){
                 console.log('Error', e)
@@ -32,8 +32,10 @@ const Posts = () => {
                 posts.map((post) => {
                     return(
                         <View key={post.id}>
+                            <Card flex center onPress={() => console.log('pressed')}> 
+                            <Card.Image source={{uri: post.thumbnail}}/>
                             <Text>{post.title}</Text>
-                            <Text style={{color: 'black'}}>The end</Text>
+                            </Card>
                         </View>
                     )
                 })
