@@ -25,7 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Pages from "./src/components/Posts"
+import Posts from "./src/components/Posts"
 
 
 const App: () => Node = () => {
@@ -45,7 +45,7 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Pages/>
+          <Posts/>
         </View>
       </ScrollView>
     </SafeAreaView>
