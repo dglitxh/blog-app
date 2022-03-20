@@ -1,13 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import type {Node} from 'react';
+import { BottomNavigation } from 'react-native-paper';
 import {
   SafeAreaView,
   ScrollView,
@@ -28,27 +21,33 @@ import Posts from "./src/components/Posts"
 import Nav from './src/components/Navbar';
 
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
 
+const AlbumsRoute = () => <Text>Albums</Text>;
+
+const RecentsRoute = () => <Text>Recents</Text>;
+
+
+const App: () => Node = () => {
+
+  const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
+      <View
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-          <Nav/>
-        <View
+        <ScrollView
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Posts/>
-        </View>
-      </ScrollView>
+         
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };

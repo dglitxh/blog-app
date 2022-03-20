@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react'
 import  { Card, Button, Paragraph}  from 'react-native-paper'
 import {
     View,
+    ScrollView,
     Text,
     StyleSheet,
     Image
@@ -26,13 +27,12 @@ const Posts = () => {
     }, [])
     
     return(
-        <View style={[styles.container]}>
+        <ScrollView style={[styles.container]}>
             {
                 posts.map((post) => {
                     return(
                         <View key={post.id}>
                               <Card style={[styles.card]}>
-                                  {alert(post.thumbnail)}
                                   <Card.Cover source={{uri: post.thumbnail}}/>
                                     <Card.Title title={post.title} />
                                     <Card.Content>
@@ -47,7 +47,7 @@ const Posts = () => {
                     )
                 })
             }
-        </View>
+        </ScrollView>
     )
 }
 
