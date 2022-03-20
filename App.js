@@ -17,7 +17,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
 import {
   Colors,
   DebugInstructions,
@@ -26,6 +25,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Posts from "./src/components/Posts"
+import Nav from './src/components/Navbar';
 
 
 const App: () => Node = () => {
@@ -41,6 +41,7 @@ const App: () => Node = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
+          <Nav/>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
