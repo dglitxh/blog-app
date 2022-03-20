@@ -3,7 +3,8 @@ import  { Card, Button, Paragraph}  from 'react-native-paper'
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native'
 
 const Posts = () => {
@@ -16,11 +17,11 @@ const Posts = () => {
                 const data = await fetchPosts.json()
                 console.log(data.results)
                 setPosts(data.results)
+                alert('got data')
             }catch(e){
                 console.log('Error', e)
             }   
         }
-
         getPosts()
     }, [])
     
@@ -31,6 +32,7 @@ const Posts = () => {
                     return(
                         <View key={post.id}>
                               <Card style={[styles.card]}>
+                                  {alert(post.thumbnail)}
                                   <Card.Cover source={{uri: post.thumbnail}}/>
                                     <Card.Title title={post.title} />
                                     <Card.Content>
