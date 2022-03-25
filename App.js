@@ -37,15 +37,10 @@ const App: () => Node = () => {
   };
 
 const Tab = createBottomTabNavigator();
-
+const Home = () =>  <Posts/>
 
   return (
     <NavigationContainer>
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
           <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -66,17 +61,9 @@ const Tab = createBottomTabNavigator();
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={<Posts/>} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Settings" component={AlbumsRoute} />
       </Tab.Navigator>
-        <ScrollView
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-         
-        </ScrollView>
-      </View>
-    </SafeAreaView>
     </NavigationContainer>
   );
 };
