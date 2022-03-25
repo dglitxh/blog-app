@@ -37,7 +37,7 @@ const App: () => Node = () => {
   };
 
 const Tab = createBottomTabNavigator();
-
+const Home = () =>  <Posts/>
 
   return (
     <NavigationContainer>
@@ -66,8 +66,8 @@ const Tab = createBottomTabNavigator();
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name="Home" component={<Posts/>} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Settings" component={AlbumsRoute} />
       </Tab.Navigator>
         <ScrollView
           style={{
