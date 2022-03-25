@@ -1,6 +1,6 @@
 import React from 'react';
 import type {Node} from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/MaterialIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -47,22 +47,23 @@ const Home = () =>  <Posts/>
             let iconName;
 
             if (route.name === 'Home') {
-              iconName = focused
-                ? 'ios-information-circle'
-                : 'ios-information-circle-outline';
+              iconName = 'laptop'
             } else if (route.name === 'Settings') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
+              iconName = 'explore' 
+            } else if (route.name === "Login"){
+              iconName = 'md-heart-outline'
             }
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'tomato',
+          tabBarActiveTintColor: 'green',
           tabBarInactiveTintColor: 'gray',
         })}
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Settings" component={AlbumsRoute} />
+        <Tab.Screen name="Login" component={RecentsRoute} />
       </Tab.Navigator>
     </NavigationContainer>
   );
