@@ -1,6 +1,6 @@
 import React from 'react';
 import type {Node} from 'react';
-import Ionicons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -20,7 +20,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Posts from "./src/components/Posts"
-import Nav from './src/components/Navbar';
+import Login from './src/components/Login';
 
 
 
@@ -47,11 +47,11 @@ const Home = () =>  <Posts/>
             let iconName;
 
             if (route.name === 'Home') {
-              iconName = 'laptop'
+              iconName = 'md-home'
             } else if (route.name === 'Settings') {
-              iconName = 'explore' 
-            } else if (route.name === "Login"){
               iconName = 'md-heart-outline'
+            } else if (route.name === "Login"){
+              iconName = 'md-d'
             }
 
             // You can return any component that you like here!
@@ -63,7 +63,7 @@ const Home = () =>  <Posts/>
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Settings" component={AlbumsRoute} />
-        <Tab.Screen name="Login" component={RecentsRoute} />
+        <Tab.Screen name="Login" component={Login} />
       </Tab.Navigator>
     </NavigationContainer>
   );
