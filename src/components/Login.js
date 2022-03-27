@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 const Login = () => {
   const [mail, setMail] = useState('')
-  const [password, setPassword] = useState
+  const [password, setPassword] = useState('')
 
   
 
@@ -15,14 +15,14 @@ const Login = () => {
       label="Email"
       value={mail}
       mode= {'outlined'}
-      onChangeText={text => setText(text)}
+      onChangeText={mail => setMail(mail)}
     />
 
   <TextInput
       label="password"
       value={password}
       mode= {'outlined'}
-      onChangeText={text => setText(text)}
+      onChangeText={password => setPassword(password)}
     />
     </View>
   );
