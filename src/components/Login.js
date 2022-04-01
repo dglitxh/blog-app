@@ -10,7 +10,7 @@ const Login = () => {
   
 
   return (
-    <View style={{flex: 3, flexDirection: 'row', justifyContent: 'center', padding:5}}>
+    <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
     <TextInput
       label="Email"
       value={mail}
