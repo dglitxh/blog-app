@@ -10,7 +10,7 @@ const Login = () => {
   
 
   return (
-    <View>
+    <View style={{flex: 3, flexDirection: 'row', justifyContent: 'center', padding:5}}>
     <TextInput
       label="Email"
       value={mail}
@@ -21,6 +21,7 @@ const Login = () => {
   <TextInput
       label="password"
       value={password}
+      type='password'
       mode= {'outlined'}
       onChangeText={password => setPassword(password)}
     />
