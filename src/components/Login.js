@@ -3,18 +3,19 @@ import { Button, TextInput } from 'react-native-paper';
 import { ScrollView, View, Image, Text } from 'react-native';
 import img from '../assets/svgs/login.svg';
 
+const svg = require("../assets/svgs/login.svg")
 
 const Login = () => {
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
-
+ 
   
 
   return (
     
     <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
 
-  {/* <Image source={img} style={{width: 40}} /> */}
+  <Image source={svg} style={{width: 10}} />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Login </Text>
     <TextInput
       label="Email"
