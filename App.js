@@ -49,9 +49,9 @@ const Home = () =>  <Posts/>
             if (route.name === 'Home') {
               iconName = 'md-home'
             } else if (route.name === 'Settings') {
-              iconName = 'md-heart-outline'
+              iconName = 'md-heart'
             } else if (route.name === "Login"){
-              iconName = 'md-d'
+              iconName = 'md-person'
             }
 
             // You can return any component that you like here!
