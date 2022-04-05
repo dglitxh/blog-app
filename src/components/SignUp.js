@@ -8,7 +8,8 @@ import { ScrollView, View, Image, Text } from 'react-native';
 const SignUp = () => {
   const [username, setUsername] = useState('')  
   const [mail, setMail] = useState('')
-  const [password, setPassword] = useState('')
+  const [password1, setPassword1] = useState('')
+  const [password2, setPassword2] = useState('')
  
   
 
@@ -20,7 +21,7 @@ const SignUp = () => {
       label="Name"
       value={username}
       mode= {'outlined'}
-      onChangeText={username => setMail(username)}
+      onChangeText={setUsername => setUsername(username)}
     />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> SignUp </Text>
     <TextInput
@@ -32,10 +33,18 @@ const SignUp = () => {
 
   <TextInput
       label="password"
-      value={password}
+      value={password1}
       type='password'
       mode= {'outlined'}
-      onChangeText={password => setPassword(password)}
+      onChangeText={password1 => setPassword1(password1)}
+    />
+
+<TextInput
+      label="repeat password"
+      value={password2}
+      type='password'
+      mode= {'outlined'}
+      onChangeText={password2 => setPassword2(password2)}
     />
     <Text style={{paddingTop: 6, color: 'green', display: 'flex'}}>forgot password?</Text>
     <Button color='green'> login with google</Button>
