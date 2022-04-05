@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
 import { ScrollView, View, Image, Text } from 'react-native';
-import img from '../assets/svgs/login.svg';
+import Img from '../assets/svgs/login.svg';
 
 
 
 const Login = () => {
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
- 
-  
+
+
 
   return (
     <ScrollView>
     <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
 
-  <Image source={require("../assets/imgs/forgot.png")} style={{width: 10}} />
+  // <Img width={300} height={300} />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Login </Text>
     <TextInput
       label="Email"
@@ -35,7 +35,7 @@ const Login = () => {
     <Button color='green'> login with google</Button>
     </View>
     </ScrollView>
-     
+
   );
 }
 
