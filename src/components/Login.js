@@ -15,9 +15,10 @@ const Login = () => {
     <ScrollView>
     <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
 
-  // <Img width={300} height={300} />
+  <Img width={300} height={300} />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Login </Text>
     <TextInput
+      type="flat"
       label="Email"
       value={mail}
       mode= {'outlined'}
