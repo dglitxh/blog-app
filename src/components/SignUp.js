@@ -34,7 +34,7 @@ const SignUp = () => {
   <TextInput
       label="password"
       value={password1}
-      type='password'
+      secureTextEntry
       mode= {'outlined'}
       onChangeText={password1 => setPassword1(password1)}
     />
@@ -42,7 +42,8 @@ const SignUp = () => {
 <TextInput
       label="repeat password"
       value={password2}
-      type='password'
+      secureTextEntry
+      selectionColor=''
       mode= {'outlined'}
       onChangeText={password2 => setPassword2(password2)}
     />
