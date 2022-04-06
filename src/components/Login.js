@@ -27,7 +27,7 @@ const Login = () => {
   <TextInput
       label="password"
       value={password}
-      type='password'
+      secureTextEntry
       mode= {'outlined'}
       onChangeText={password => setPassword(password)}
     />
