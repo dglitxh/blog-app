@@ -33,7 +33,7 @@ const App: () => Node = () => {
 
   const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: isDarkMode ? Colors.darker : "white",
   };
 
 const Tab = createBottomTabNavigator();
@@ -45,23 +45,24 @@ const Home = () =>  <Posts/>
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
             if (route.name === 'Home') {
-              iconName = 'md-home'
+              iconName = focused? 'md-home' : 'md-home-outline'
             } else if (route.name === 'Settings') {
-              iconName = 'md-heart'
+              iconName = focused? 'md-heart' : 'md-heart-outline'
             } else if (route.name === "Login"){
-              iconName = 'md-person'
+              iconName = focused? 'md-person' : "md-person-outline"
             }
-
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: 'green',
           tabBarInactiveTintColor: 'gray',
+          tabBarShowLabel: false,
+          tabBarHideOnKeyboard: true,
+          lazy: true
         })}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={Posts} />
         <Tab.Screen name="Settings" component={AlbumsRoute} />
         <Tab.Screen name="Login" component={Login} />
       </Tab.Navigator>
