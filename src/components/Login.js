@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
-import { ScrollView, View, Image, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import Img from '../assets/svgs/login.svg';
 
 
@@ -12,30 +12,40 @@ const Login = () => {
 
 
   return (
-    <ScrollView>
-    <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
 
-  <Img width={300} height={300} />
+    <View style={{
+      flex: 3,
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding:15,
+      backgroundColor: "white",
+      }}>
+
+  <Img width={300} height={200} />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Login </Text>
     <TextInput
-      type="flat"
       label="Email"
       value={mail}
-      mode= {'outlined'}
+      mode= {'flat'}
+      activeUnderlineColor="green"
       onChangeText={mail => setMail(mail)}
+      backgroundColor="white"
     />
 
   <TextInput
       label="password"
       value={password}
       secureTextEntry
-      mode= {'outlined'}
+      mode= {'flat'}
+      activeUnderlineColor="green"
+      backgroundColor="white"
       onChangeText={password => setPassword(password)}
     />
-    <Text style={{paddingTop: 6, color: 'green', display: 'flex'}}>forgot password?</Text>
-    <Button color='green'> login with google</Button>
+    <Text style={{textAlign: 'right', paddingTop: 15, color: 'green', paddingRight: 20,  paddingBottom: 15, display: 'flex'}}>forgot password?</Text>
+    <Button  mode="outlined" icon={"google"} color='green'> login with google</Button>
+    <Text style={{textAlign: "center", paddingTop: 24}}>New here? <Text style={{color: "green"}}>Register</Text> </Text>
     </View>
-    </ScrollView>
+
 
   );
 }
