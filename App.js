@@ -20,7 +20,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Posts from "./src/components/Posts"
-import Login from './src/components/Login';
+import UserStack from "./src/screens/User"
 
 
 
@@ -49,7 +49,7 @@ const Home = () =>  <Posts/>
               iconName = focused? 'md-home' : 'md-home-outline'
             } else if (route.name === 'Settings') {
               iconName = focused? 'md-heart' : 'md-heart-outline'
-            } else if (route.name === "Login"){
+            } else if (route.name === "UserStack"){
               iconName = focused? 'md-person' : "md-person-outline"
             }
             // You can return any component that you like here!
@@ -59,12 +59,12 @@ const Home = () =>  <Posts/>
           tabBarInactiveTintColor: 'gray',
           tabBarShowLabel: false,
           tabBarHideOnKeyboard: true,
-          lazy: true
+          lazy: true,
         })}
       >
         <Tab.Screen name="Home" component={Posts} />
-        <Tab.Screen name="Settings" component={AlbumsRoute} />
-        <Tab.Screen name="Login" component={Login} />
+        <Tab.Screen  name="Settings" component={AlbumsRoute} />
+        <Tab.Screen options={{headerShown: false}} name="UserStack" component={UserStack} />
       </Tab.Navigator>
     </NavigationContainer>
   );
