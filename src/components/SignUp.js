@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
-import { ScrollView, View, Image, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import Img from '../assets/svgs/auth.svg';
 
 
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   const [username, setUsername] = useState('')  
   const [mail, setMail] = useState('')
   const [password1, setPassword1] = useState('')
@@ -13,7 +13,7 @@ const SignUp = () => {
  
   return (
     <ScrollView>
-    <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
+    <View style={{backgroundColor: "white", flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
     <Img width={300} height={200} />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> SignUp </Text>
     <TextInput
@@ -24,7 +24,6 @@ const SignUp = () => {
       backgroundColor="white"
       onChangeText={setUsername => setUsername(username)}
     />
-  <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> SignUp </Text>
     <TextInput
       label="Email"
       value={mail}
@@ -53,8 +52,10 @@ const SignUp = () => {
       backgroundColor="white"
       onChangeText={password2 => setPassword2(password2)}
     />
-    <Button color='green'> login with google</Button>
-    <Text style={{textAlign: "center", paddingTop: 24}}>Have an account? <Text style={{color: "green"}}>Login</Text> </Text>
+    <Button style={{margin: 20}} mode='outlined' color='green'> login with google</Button>
+    <Text
+    onPress={() => {navigation.navigate('Login')}}
+    style={{textAlign: "center",}}>Have an account? <Text style={{color: "green"}}>Login</Text> </Text>
     </View>
     </ScrollView>
      
