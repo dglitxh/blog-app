@@ -2,14 +2,15 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
 import {  View,  Text } from 'react-native';
-import Img from '../assets/svgs/login.svg';
+import Img from '../assets/svgs/forgot.svg';
 
 
 
 const Forgot = () => {
-
+    const [mail, setMail] = useState('')
+    
     return(
-        <View style={{flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
+        <View style={{backgroundColor: "white", flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
             <Img width={300} height={200} />
             <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Forgot </Text>
             <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Password? </Text>
@@ -21,7 +22,7 @@ const Forgot = () => {
                 backgroundColor="white"
                 onChangeText={mail => setMail(mail)}
                 />
-                <Button mode='contained'> Submit </Button>
+                <Button style={{margin: 20, backgroundColor: "green",}} mode='contained'> Submit </Button>
         </View>
     )
 }
