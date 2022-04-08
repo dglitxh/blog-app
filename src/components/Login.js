@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
-import { ScrollView, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import Img from '../assets/svgs/login.svg';
 
 
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -41,9 +41,13 @@ const Login = () => {
       backgroundColor="white"
       onChangeText={password => setPassword(password)}
     />
-    <Text style={{textAlign: 'right', paddingTop: 15, color: 'green', paddingRight: 20,  paddingBottom: 15, display: 'flex'}}>forgot password?</Text>
+    <Text
+    onPress={() => {navigation.push('Forgot')}}
+     style={{textAlign: 'right', paddingTop: 15, color: 'green', paddingRight: 20,  paddingBottom: 15, display: 'flex'}}>forgot password?</Text>
     <Button  mode="outlined" icon={"google"} color='green'> login with google</Button>
-    <Text style={{textAlign: "center", paddingTop: 24}}>New here? <Text style={{color: "green"}}>Register</Text> </Text>
+    <Text
+    onPress={() => {navigation.push('SignUp')}}
+    style={{textAlign: "center", paddingTop: 24}}>New here? <Text style={{color: "green"}}>Register</Text> </Text>
     </View>
 
 
