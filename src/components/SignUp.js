@@ -53,6 +53,7 @@ const SignUp = ({navigation}) => {
       onChangeText={password2 => setPassword2(password2)}
     />
     <Button style={{margin: 20}} mode='outlined' color='green'> login with google</Button>
+    <Button style={{margin: 20, backgroundColor: "green",}} mode='contained'> Sign Up </Button>
     <Text
     onPress={() => {navigation.navigate('Login')}}
     style={{textAlign: "center",}}>Have an account? <Text style={{color: "green"}}>Login</Text> </Text>
