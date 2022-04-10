@@ -45,7 +45,7 @@ const Login = ({navigation}) => {
     onPress={() => {navigation.push('Forgot')}}
      style={{textAlign: 'right', paddingTop: 15, color: 'green', paddingRight: 20,  paddingBottom: 15, display: 'flex'}}>forgot password?</Text>
     <Button  mode="outlined" icon={"google"} color='green'> login with google</Button>
-    <Button style={{margin: 20, backgroundColor: "green",}} mode='contained'> Submit </Button>
+    <Button style={{margin: 20, backgroundColor: "green",}} mode='contained'> login </Button>
     <Text
     onPress={() => {navigation.push('SignUp')}}
     style={{textAlign: "center", paddingTop: 24}}>New here? <Text style={{color: "green"}}>Register</Text> </Text>
