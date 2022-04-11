@@ -12,7 +12,7 @@ const Login = ({navigation}) => {
 
 
   return (
-
+  <ScrollView>
     <View style={{
       flex: 3,
       flexDirection: 'column',
@@ -20,7 +20,7 @@ const Login = ({navigation}) => {
       padding:15,
       backgroundColor: "white",
       }}>
-<ScrollView>
+
   <Img width={300} height={200} />
   <Text style={{fontSize: 49, fontWeight: 'bold', color: 'green'}}> Login </Text>
     <TextInput
@@ -43,14 +43,33 @@ const Login = ({navigation}) => {
     />
     <Text
     onPress={() => {navigation.push('Forgot')}}
-     style={{textAlign: 'right', paddingTop: 15, color: 'green', paddingRight: 20,  paddingBottom: 15, display: 'flex'}}>forgot password?</Text>
+     style={
+       {
+         textAlign: 'right', 
+         paddingTop: 15, 
+         color: 'green', 
+         paddingRight: 20,  
+         paddingBottom: 15, 
+         display: 'flex'
+         }
+        }>
+          forgot password?
+      </Text>
+
     <Button  mode="outlined" icon={"google"} color='green'> login with google</Button>
     <Button style={{margin: 20, backgroundColor: "green",}} mode='contained'> login </Button>
     <Text
     onPress={() => {navigation.push('SignUp')}}
-    style={{textAlign: "center", paddingTop: 24}}>New here? <Text style={{color: "green"}}>Register</Text> </Text>
-    </ScrollView>
+    style={
+      {
+        textAlign: "center", 
+        }
+      }>
+        New here? 
+        <Text style={{color: "green"}}>Register</Text> 
+    </Text>
     </View>
+    </ScrollView>
 
 
   );
