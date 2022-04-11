@@ -47,8 +47,8 @@ const Home = () =>  <Posts/>
             let iconName;
             if (route.name === 'Home') {
               iconName = focused? 'md-home' : 'md-home-outline'
-            } else if (route.name === 'Settings') {
-              iconName = focused? 'md-heart' : 'md-heart-outline'
+            } else if (route.name === 'My Posts') {
+              iconName = focused? 'book' : 'book-outline'
             } else if (route.name === "UserStack"){
               iconName = focused? 'md-person' : "md-person-outline"
             }
@@ -63,7 +63,7 @@ const Home = () =>  <Posts/>
         })}
       >
         <Tab.Screen name="Home" component={Posts} />
-        <Tab.Screen  name="Settings" component={AlbumsRoute} />
+        <Tab.Screen  name="My Posts" component={AlbumsRoute} />
         <Tab.Screen options={{headerShown: false}} name="UserStack" component={UserStack} />
       </Tab.Navigator>
     </NavigationContainer>
