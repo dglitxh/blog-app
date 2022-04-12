@@ -9,16 +9,28 @@ const Login = ({navigation}) => {
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
 
-  const settings = {
-    method: 'POST',
-    headers: {
+  const postLogin = async () => {
+    const settings = {
+      method: 'POST',
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: mail,
+        password: password
+      })
+    }
+    try{
+      const response = await fetch("iyceblog.herokuapp.com/api/auth/login", settings)
+      const data = await response.json()
+      console.log(data)
 
-    },
-    body: {
-      email: mail,
-      password: password
+    }catch(e){
+      console.log(e)
     }
   }
+  
 
 
   return (
@@ -67,7 +79,7 @@ const Login = ({navigation}) => {
       </Text>
 
     <Button  mode="outlined" icon={"google"} color='green'> login with google</Button>
-    <Button style={{margin: 20, backgroundColor: "green",}} mode='contained'> login </Button>
+    <Button onPress={() => postLogin()} style={{margin: 20, backgroundColor: "green",}} mode='contained'> login </Button>
     <Text
     onPress={() => {navigation.push('SignUp')}}
     style={
