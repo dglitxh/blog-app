@@ -9,6 +9,16 @@ const Login = ({navigation}) => {
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
 
+  const settings = {
+    method: 'POST',
+    headers: {
+
+    },
+    body: {
+      email: mail,
+      password: password
+    }
+  }
 
 
   return (
