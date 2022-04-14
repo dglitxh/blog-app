@@ -11,6 +11,31 @@ const SignUp = ({navigation}) => {
   const [password1, setPassword1] = useState('')
   const [password2, setPassword2] = useState('')
  
+  const signupPost = async () => {
+    const settings = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        email: mail,
+        password1: password1,
+        password2: password2
+      })
+    }
+    try{
+      const response = await fetch("http://iyceblog.herokuapp.com", settings)
+      const data = await response.json()
+      console.log(data)
+    }catch(err){
+      console.log(err)
+    }
+    
+  }
+   
+
   return (
     <ScrollView>
     <View style={{backgroundColor: "white", flex: 3, flexDirection: 'column', justifyContent: 'center', padding:15}}>
