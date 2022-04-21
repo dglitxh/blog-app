@@ -19,7 +19,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Posts from "./src/components/Posts"
+import HomeStack from './src/screens/Home';
 import UserStack from "./src/screens/User"
 
 
@@ -62,7 +62,7 @@ const Home = () =>  <Posts/>
           lazy: true,
         })}
       >
-        <Tab.Screen name="Home" component={Posts} />
+        <Tab.Screen options={{headerShown: false}} name="Home" component={HomeStack} />
         <Tab.Screen  name="My Posts" component={AlbumsRoute} />
         <Tab.Screen options={{headerShown: false}} name="UserStack" component={UserStack} />
       </Tab.Navigator>
