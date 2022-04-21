@@ -1,14 +1,16 @@
 import  React from 'react'
-import { View, ScrollView } from 'react-native'
+import { View, ScrollView, Text, Image } from 'react-native'
 
-const PostView = () => {
+const PostView = (props) => {
     const { post } = props
 
     return(
         <ScrollView>
             <Text>{post.title}</Text>
             <Image source={{uri: post.thumbnail}}/>
-            <Text>{post.text}</Text>
+            <Text>{post.body}</Text>
         </ScrollView>
     )
 }
+
+export default PostView
