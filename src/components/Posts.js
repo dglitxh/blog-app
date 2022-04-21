@@ -8,28 +8,17 @@ import {
     Image
 } from 'react-native'
 
-const Posts = () => {
-    const [posts, setPosts] = useState([])
+const Posts = (props) => {
 
-    useEffect(() => {
-        const getPosts = async () => {
-            try{
-                const fetchPosts = await fetch('http://iyceblog.herokuapp.com/api/posts')
-                const data = await fetchPosts.json()
-                console.log(data.results)
-                setPosts(data.results)
-                alert('got data')
-            }catch(e){
-                console.log('Error', e)
-            }   
-        }
-        getPosts()
-    }, [])
+    const viewPost = (post) => {
+        props.navigation.navigate('PostView')
+        props.sendPost(post)
+    }
     
     return(
         <ScrollView style={[styles.container]}>
             {
-                posts.map((post) => {
+                props.posts.map((post) => {
                     return(
                         <View key={post.id}>
                               <Card style={[styles.card]}>
@@ -40,7 +29,7 @@ const Posts = () => {
                                     </Card.Content>
                                     <Card.Actions>
                                     <Button>Comments</Button>
-                                    <Button>Read</Button>
+                                    <Button onPress={() => viewPost(post)}>Read</Button>
                                     </Card.Actions>
                                 </Card>
                         </View>
