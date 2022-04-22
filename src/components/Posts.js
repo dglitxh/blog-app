@@ -11,7 +11,7 @@ import {
 const Posts = (props) => {
 
     const viewPost = (post) => {
-        props.navigation.navigate('PostView')
+        props.navigation.navigate('Post')
         props.sendPost(post)
     }
     
