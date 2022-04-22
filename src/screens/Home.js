@@ -20,7 +20,7 @@ const HomeStack = () => {
                 alert('got data')
             }catch(e){
                 console.log('Error', e)
-            }   
+            }
         }
         getPosts()
     }, [])
@@ -31,7 +31,7 @@ const HomeStack = () => {
                 <Posts navigation={navigation} posts={posts} sendPost={sendPost}/>
             </View>
         )
-        
+
     }
 
     function PostComp() {
@@ -40,11 +40,7 @@ const HomeStack = () => {
                 <PostView post={post}/>
             </View>
         )
-        
-    }
 
-    function addPosts(posts) {
-        setPosts(posts)
     }
 
     function sendPost(post) {
@@ -54,7 +50,7 @@ const HomeStack = () => {
     return(
         <Stack.Navigator>
             <Stack.Screen name={"Posts"} component={PostsComp} />
-            <Stack.Screen name={"PostView"} component={PostComp} />
+            <Stack.Screen name={"Post"} component={PostComp} />
         </Stack.Navigator>
     )
 }
