@@ -8,7 +8,7 @@ import Img from '../assets/svgs/forgot.svg';
 
 const Forgot = () => {
     const [mail, setMail] = useState('')
-    
+
     const requestPwdChg = async () => {
         const settings = {
             method: "POST",
@@ -25,7 +25,7 @@ const Forgot = () => {
             const data  = await response.json()
             console.log(data)
         }catch(e){
-
+          console.log('Error:', e)
         }
     }
     return(
