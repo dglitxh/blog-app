@@ -22,9 +22,9 @@ const NotUser = () => {
 
 function UserStack() {
   const [user, setUser] = useState('')
-  const auth = user? <Profile/> : <NotUser/>
+  const authState = user? <Profile/> : <NotUser/>
   return (
-    auth
+    authState
   );
 }
 
