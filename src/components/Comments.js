@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { View, ScrollView, Text} frm "react-native"
 
-const Comments = () => {
-
+const Comments = (props) => {
+const { comments } = props
   return(
     <ScrollView>
       {
