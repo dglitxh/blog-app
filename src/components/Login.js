@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
 import { View, Text, ScrollView } from 'react-native';
 import Img from '../assets/svgs/login.svg';
+import { storeData } from "../helpers/helpers"
 
 
 
@@ -24,13 +25,14 @@ const Login = ({navigation}) => {
     try{
       const response = await fetch("iyceblog.herokuapp.com/api/auth/login", settings)
       const data = await response.json()
+      storeData(data)
       console.log(data)
 
     }catch(e){
       console.log(e)
     }
   }
-  
+
 
 
   return (
@@ -67,11 +69,11 @@ const Login = ({navigation}) => {
     onPress={() => {navigation.push('Forgot')}}
      style={
        {
-         textAlign: 'right', 
-         paddingTop: 15, 
-         color: 'green', 
-         paddingRight: 20,  
-         paddingBottom: 15, 
+         textAlign: 'right',
+         paddingTop: 15,
+         color: 'green',
+         paddingRight: 20,
+         paddingBottom: 15,
          display: 'flex'
          }
         }>
@@ -84,11 +86,11 @@ const Login = ({navigation}) => {
     onPress={() => {navigation.push('SignUp')}}
     style={
       {
-        textAlign: "center", 
+        textAlign: "center",
         }
       }>
-        New here? 
-        <Text style={{color: "green"}}>Register</Text> 
+        New here?
+        <Text style={{color: "green"}}>Register</Text>
     </Text>
     </View>
     </ScrollView>
