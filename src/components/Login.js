@@ -25,7 +25,7 @@ const Login = ({navigation}) => {
     try{
       const response = await fetch("iyceblog.herokuapp.com/api/auth/login", settings)
       const data = await response.json()
-      storeData(data)
+      storeData('token', JSON.stringify(data))
       console.log(data)
 
     }catch(e){
