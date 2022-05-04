@@ -5,6 +5,7 @@ import Img from '../assets/svgs/auth.svg';
 import { storeData } from '../helpers/helpers'
 
 
+
 const SignUp = ({navigation}) => {
   const [username, setUsername] = useState('')
   const [mail, setMail] = useState('')
@@ -12,6 +13,10 @@ const SignUp = ({navigation}) => {
   const [password2, setPassword2] = useState('')
 
   const signupPost = async () => {
+    if (password1 !== password2){
+      alert("Passwords do not match")
+      return
+    }
     const settings = {
       method: "POST",
       headers: {
@@ -29,7 +34,7 @@ const SignUp = ({navigation}) => {
       const response = await fetch("http://iyceblog.herokuapp.com", settings)
       const data = await response.json()
       console.log(data)
-      storeData(data)
+      storeData('token', JSON.stringify(data))
     }catch(err){
       console.log(err)
     }
