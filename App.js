@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext, useEffect} from 'react';
 import type {Node} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
@@ -22,14 +22,17 @@ import {
 import HomeStack from './src/screens/Home';
 import UserStack from "./src/screens/User"
 
-
+export const userContext = createContext(null)
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 
 const RecentsRoute = () => <Text>Recents</Text>;
 
 
-const App: () => Node = () => {
+const App = () => {
+  const [user, setUser] = useState(null)
+
+
 
   const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
@@ -37,7 +40,7 @@ const App: () => Node = () => {
   };
 
 const Tab = createBottomTabNavigator();
-const Home = () =>  <Posts/>
+
 
   return (
     <NavigationContainer>
